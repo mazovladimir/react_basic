@@ -21,15 +21,4 @@ class Check {
     }
 }
 
-export const myProduct = new Check();
-console.log(myProduct);
-myProduct.add({title: 'first', count: 2, price: 10});
-console.log(myProduct);
-myProduct.add({title: 'second', count: 2, price: 10});
-console.log(myProduct);
-myProduct.remove({title: 'second', count: 2, price: 10});
-console.log(myProduct);
-myProduct.remove({title: 'first', count: 2, price: 10});
-console.log(myProduct);
-
-
+export default Check;
