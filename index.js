@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import ReactDOM from 'react-dom';
+import { product } from './check';
 
 class App extends Component {
     constructor(props) {
