@@ -104,9 +104,54 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"index.js":[function(require,module,exports) {
-console.log("Hello, world");
-},{}],"../../Downloads/node-v10.13.0-win-x64/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+})({"src/module.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.resultSum = exports.arithmetic = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Arithmetic =
+/*#__PURE__*/
+function () {
+  function Arithmetic() {
+    var x = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+    var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+    _classCallCheck(this, Arithmetic);
+
+    this.x = x;
+    this.y = y;
+  }
+
+  _createClass(Arithmetic, [{
+    key: "sum",
+    value: function sum(x, y) {
+      return x + y;
+    }
+  }]);
+
+  return Arithmetic;
+}();
+
+var arithmetic = new Arithmetic();
+exports.arithmetic = arithmetic;
+var resultSum = arithmetic.sum;
+exports.resultSum = resultSum;
+},{}],"index.js":[function(require,module,exports) {
+"use strict";
+
+var _module = require("./src/module");
+
+console.log((0, _module.resultSum)(1, 2));
+},{"./src/module":"src/module.js"}],"../../Downloads/node-v10.13.0-win-x64/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -133,7 +178,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50076" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55987" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
