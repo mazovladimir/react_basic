@@ -1,3 +1,20 @@
-import { resultSum } from './src/module';
+import React, { Component } from 'react';
 
-console.log(resultSum(1, 2));
+import ReactDOM from 'react-dom';
+
+class App extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div>Hello, World</div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);
